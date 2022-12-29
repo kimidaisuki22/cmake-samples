@@ -8,6 +8,11 @@ target_sources(Utils INTERFACE
     FILES ${CMAKE_CURRENT_SOURCE_DIR}/include/head_onlys/utils.hpp
 )
 
+target_include_directories(Utils INTERFACE 
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+)
+
 install(TARGETS Utils
     EXPORT UtilsExport
     FILE_SET HEADERS
